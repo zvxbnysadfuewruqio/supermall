@@ -311,6 +311,11 @@
       this.getHomeGoods('pop')
       this.getHomeGoods('new')
       this.getHomeGoods('sell')
+
+      this.$bus.$on('itrmImageLoad',()=>{
+        console.log(111)
+        this.$refs.scroll.refresh()
+      })
     },
     methods: {
       tabClick(index) {
