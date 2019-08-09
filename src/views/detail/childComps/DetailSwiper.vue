@@ -1,10 +1,8 @@
 <template>
   <div>
-    <swiper>
-      <swiper-item v-for="item in banners" :key="item.acm">
-        <a :href="item.link">
-          <img :src="item.image" @load="itemImage">
-        </a>
+    <swiper class="detailSwiper">
+      <swiper-item v-for="item in banners" :key="item">
+          <img :src="item">
       </swiper-item>
     </swiper>
   </div>
@@ -28,12 +26,7 @@
       }
     },
     methods:{
-      itemImage(){
-        if(!this.isLoad){
-          this.$emit('itemswiperImage')
-          this.isLoad=true
-        }
-      }
+
     },
     components:{
       Swiper,
@@ -43,4 +36,8 @@
 </script>
 
 <style scoped>
+.detailSwiper{
+  height:300px;
+  overflow: hidden;
+}
 </style>
